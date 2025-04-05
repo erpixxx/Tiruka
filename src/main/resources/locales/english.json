@@ -1,0 +1,21 @@
+{
+  "welcome-message": "haii",
+  "command-8ball-answers": [
+    "Definitely yes!",
+    "Yes",
+    "Yeah",
+    "Maybee",
+    "I don't knoww",
+    "Nuh uh",
+    "Nahhh... :3333",
+    "No",
+    "Hell nah"
+  ],
+  "command-8ball-answer-definitely-yes": "",
+  "command-8ball-answer-yes2": "",
+  "command-8ball-answer-maybe-yes": "",
+  "command-8ball-answer-maybe": "",
+  "command-8ball-answer-maybe-no": "",
+  "command-8ball-answer-no": "",
+  "command-8ball-answer-definitely-no": ""
+}

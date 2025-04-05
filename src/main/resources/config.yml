@@ -1,0 +1,115 @@
+version: 1
+
+primary-language: pl_PL
+
+app-token: ""
+profile:
+  activity:
+    # 0 - PLAYING
+    # 1 - STREAMING
+    # 2 - LISTENING
+    # 3 - WATCHING
+    # 4 - CUSTOM_STATUS
+    # 5 - COMPETING
+    type: 2
+    name: "test"
+    # Used when activity is set to streaming
+    url: ""
+  # online, idle, dnd, invisible, offline
+  status: online
+
+features:
+  economy:
+    enabled: true
+    default-settings:
+      currency-symbol: "$"
+      daily-base-value: 500
+      daily-streak-bonus: 50
+      weekly-streak-bonus: 250
+      monthly-streak-bonus: 1000
+      chat-message-value-min: 10
+      chat-message-value-max: 15
+      chat-message-interval: 30
+      voice-activity-value-min: 500
+      voice-activity-value-max: 500
+      voice-activity-interval: 300
+  logging:
+    enabled: true
+    default-settings:
+      chat-messages: true
+      command-execution: true
+      voice-activity: true
+  leveling-system:
+    enabled: true
+    default-settings:
+      base-max-experience: 100
+      chat-message-value-min: 100
+      chat-message-value-max: 150
+      chat-message-interval: 30
+      voice-activity-value-min: 500
+      voice-activity-value-max: 750
+      voice-activity-interval: 300
+  moderation:
+    enabled: true
+  ticket-system:
+    enabled: true
+  reaction-roles:
+    enabled: true
+  vote-reactions:
+    enabled: true
+  welcome:
+    direct-message:
+      enabled: true
+    welcome-channel:
+      enabled: true
+  # Activity reaction
+  hall-of-lame:
+    enabled: true
+    activities: [ "League of Legends" ]
+    channel: "debil"
+
+cache:
+  memory:
+    expire-after-access: 150
+    expire-after-write: 300
+    maximum-size: 1000
+  redis:
+    enabled: false
+    expire-after-access: 600
+    expire-after-write: 600
+    credentials:
+      hostname: 127.0.0.1
+      port: 6379
+      username: "default"
+      password: ""
+      database: 0
+    pool-settings:
+      maximum-pool-size: 8
+      maximum-idle: 5
+      minimum-idle: 2
+
+storage:
+  # Flat-file storage:
+  # - H2 (default)
+  # - SQLite
+  # Server storage:
+  # - MariaDB
+  # - MySQL
+  # - PostgreSQL
+  type: h2
+  data:
+    hostname: 127.0.0.1
+    port: 3306
+    username: root
+    password: ""
+    database: tiruka
+    pool-settings:
+      connection-timeout: 5000
+      maximum-pool-size: 5
+      minimum-idle: 5
+    table-prefix: "tiruka_"
+
+# Not implemented yet
+remove-guild-data-after-leave: false
+# If you are running small bot, you can set this to 1
+shard-count: 10
